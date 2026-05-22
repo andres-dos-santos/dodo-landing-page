@@ -67,7 +67,7 @@ function CalendarContent() {
   }
 
   function handleNext() {
-    router.push('/resume')
+    router.push('appointment/resume')
   }
 
   return (
