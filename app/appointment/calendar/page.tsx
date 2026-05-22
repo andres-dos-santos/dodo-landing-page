@@ -67,7 +67,7 @@ function CalendarContent() {
   }
 
   function handleNext() {
-    router.push('appointment/resume')
+    router.push('/appointment/resume')
   }
 
   return (
@@ -77,7 +77,7 @@ function CalendarContent() {
           <H4>Serviço</H4>
 
           <ServiceItem
-            href={`appointment/calendar?service=${selectedService.slug}`}
+            href={`/appointment/calendar?service=${selectedService.slug}`}
             className="rounded-2xl border border-foreground/10 mt-2"
           >
             <ServiceItemTitle price={selectedService.price}>

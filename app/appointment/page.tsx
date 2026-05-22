@@ -21,7 +21,7 @@ export default function Home() {
         {services.map((service) => (
           <ServiceItem
             key={service.slug}
-            href={`appointment/calendar?service=${service.slug}`}
+            href={`/appointment/calendar?service=${service.slug}`}
             onClick={() => {
               setSelectedService(service)
               setSelectedDate(undefined)
