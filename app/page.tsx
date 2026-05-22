@@ -52,13 +52,13 @@ const faqs = [
 export default function Home() {
   return (
     <div className="">
-      <header className="h-20 flex items-center justify-between px-10">
-        <div className="flex items-center w-56">
+      <header className="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-10">
+        <div className="flex items-center md:w-56">
           {/* <div className="h-10 w-10"></div> */}
           <p className="text-sm -tracking-wider">/ dodoapp.com</p>
         </div>
 
-        <nav className="flex flex-1 items-center justify-center">
+        <nav className="hidden flex-1 items-center justify-center md:flex">
           <ul className="flex items-center gap-8">
             <li className="text-sm dark:text-zinc-200 hover:dark:text-white">
               <a href="#solucoes">Soluções</a>
@@ -75,7 +75,7 @@ export default function Home() {
           </ul>
         </nav>
 
-        <div className="w-56 flex">
+        <div className="flex md:w-56">
           <Link href="/appointment" className="ml-auto">
             <Ellipsis />
           </Link>
@@ -83,7 +83,7 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="pt-10 mx-auto min-h-[calc(100vh-5rem)] max-w-4xl text-center px-6">
+        <section className="mx-auto min-h-[calc(100vh-5rem)] max-w-4xl px-4 pt-8 text-center sm:px-6 sm:pt-12 lg:pt-10">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full dark:text-white text-zinc-900 px-3 py-2 text-xs font-semibold">
             <span className="flex h-6 w-6 items-center justify-center rounded bg-zinc-100 dark:bg-zinc-800">
               <Star size={14} fill="currentColor" />
@@ -91,29 +91,32 @@ export default function Home() {
             5.0 over 24.5K + Reviews
           </div>
 
-          <h3 className="text-6xl -tracking-wider font-semibold text-center text-balance font-title">
+          <h3 className="text-4xl font-semibold -tracking-wider text-center text-balance font-title sm:text-5xl lg:text-6xl">
             Agendamentos, clientes e pagamentos
           </h3>
 
-          <p className="text-[15px] my-10">
+          <p className="mx-auto my-8 max-w-md text-[15px] sm:my-10">
             Gerencie sua agenda, clientes, serviços e cobranças sem complicação.
           </p>
 
-          <div className="flex items-center justify-center gap-4 mb-10">
-            <button type="button" className="bg-white h-12 rounded-full px-10">
+          <div className="mb-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <button
+              type="button"
+              className="h-12 w-full rounded-full bg-white px-10 sm:w-auto"
+            >
               <p className="text-xs text-zinc-900 font-medium -tracking-wide">
                 Comece, é grátis
               </p>
             </button>
             <button
               type="button"
-              className="border border-zinc-500 h-12 rounded-full px-10"
+              className="h-12 w-full rounded-full border border-zinc-500 px-10 sm:w-auto"
             >
               <p className="text-xs font-medium -tracking-wide">Download app</p>
             </button>
           </div>
 
-          <div className="dark:bg-zinc-900 bg-zinc-200 rounded-4xl h-96"></div>
+          <div className="h-72 rounded-4xl bg-zinc-200 dark:bg-zinc-900 sm:h-80 lg:h-96"></div>
         </section>
 
         <section id="solucoes" className="mx-auto max-w-6xl px-6 py-24">
