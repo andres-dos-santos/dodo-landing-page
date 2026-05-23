@@ -2,6 +2,7 @@ import {
   ArrowDownLeft,
   ArrowRight,
   Check,
+  Crown,
   Ellipsis,
   Mail,
   MessageCircle,
@@ -10,6 +11,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { MobileNav } from './mobile-nav'
+import Image from 'next/image'
 
 const solutions = [
   {
@@ -128,10 +130,18 @@ export default function Home() {
   return (
     <div className="relative">
       <header className="flex z-20 fixed bg-white/90 dark:bg-zinc-900 backdrop-blur-xl w-full h-20 border-b border-dashed border-zinc-200 dark:border-zinc-800 items-center justify-between px-4 sm:px-6 lg:px-10">
-        <div className="flex items-center md:w-56">
-          {/* <div className="h-10 w-10"></div> */}
-          <p className="text-sm -tracking-wider">/ dodoapp.com</p>
-        </div>
+        <Link href="/" className="flex items-center md:w-56">
+          <div className="h-20 w-20 flex items-center justify-center">
+            <Image
+              src="/logo.png"
+              alt="Dodo Logo"
+              className="w-[40px] h-[40px]"
+              width={224}
+              height={224}
+            />
+          </div>
+          <p className="text-xs -tracking-wider font-medium">/ dodoapp.com</p>
+        </Link>
 
         <nav className="hidden flex-1 items-center justify-center md:flex">
           <ul className="flex items-center gap-8">
@@ -174,7 +184,7 @@ export default function Home() {
               <span className="flex h-6 w-6 items-center justify-center rounded bg-zinc-100 dark:bg-zinc-800">
                 <Star size={14} fill="currentColor" />
               </span>
-              5.0 of reviews
+              5.0 em 12 avaliações
             </div>
 
             <h3 className="text-4xl font-semibold -tracking-wider text-center text-balance font-title sm:text-5xl lg:text-6xl">
@@ -216,7 +226,13 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="h-56 rounded-[28px] bg-zinc-200 dark:bg-zinc-800 sm:h-80 sm:rounded-4xl lg:h-96"></div>
+            <div className="grid grid-cols-5 gap-3 grid-rows-2 h-96">
+              <div className="row-span-2 col-span-3 p-1 bg-zinc-200 dark:bg-zinc-800 sm:rounded-l-4xl rounded-xl h-full"></div>
+
+              <div className="h-[186px] col-span-2 p-1 bg-zinc-200 dark:bg-zinc-800 rounded-tr-4xl rounded-xl"></div>
+
+              <div className="h-[186px] col-span-2 p-1 bg-zinc-200 dark:bg-zinc-800 rounded-br-4xl rounded-xl"></div>
+            </div>
           </div>
         </section>
 
@@ -231,7 +247,7 @@ export default function Home() {
                   key={solution.title}
                   className="border-b border-dashed relative border-zinc-200 dark:border-zinc-800 px-5 py-10 sm:px-7 sm:pt-16 sm:pb-0 md:px-16 md:first:border-r lg:px-32"
                 >
-                  <div className="max-w-xl">
+                  <div className="max-w-xl h-56">
                     <h2 className="max-w-lg text-xl text-balance font-semibold leading-[0.95] -tracking-wider font-title sm:text-4xl">
                       {solution.title}
                     </h2>
@@ -249,7 +265,7 @@ export default function Home() {
                     </Link>
                   </div>
 
-                  <div className="mt-10 h-56 border border-zinc-200 dark:border-zinc-800/50 dark:bg-[linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:54px_54px] p-6 sm:mt-12 sm:h-[400px] sm:border-b-0"></div>
+                  <div className="h-56 border border-zinc-200 dark:border-zinc-800/50 dark:bg-[linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:54px_54px] p-6 sm:mt-12 sm:h-[400px] sm:border-b-0"></div>
                 </article>
               )
             })}
@@ -279,80 +295,84 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3 md:gap-2">
+            <div className="grid gap-2 md:grid-cols-3 md:gap-2">
               {pricingPlans.map((plan) => (
-                <article key={plan.name} className="group">
+                <article key={plan.name} className="group relative">
                   <div
-                    className={`flex items-center justify-center h-10 gap-2 ${!plan.highlighted && 'opacity-0'} opacity-0 transition-all duration-300 group-hover:translate-y-0 translate-y-3.5 ${plan.highlighted && 'group-hover:opacity-100 border border-zinc-200 dark:border-zinc-800'}`}
+                    className={`${plan.highlighted && 'bg-zinc-100 dark:bg-zinc-800'} p-1 rounded-[18px]`}
                   >
-                    <Star
-                      size={12}
-                      fill="currentColor"
-                      className="text-orange-500"
-                    />
-                    <p className="text-[9px] font-semibold tracking-[4px] mt-[3px]">
-                      MELHOR PLANO
-                    </p>
-                  </div>
-
-                  <div className="relative hover:border-zinc-200 hover:dark:border-zinc-700 overflow-hidden mt-2 border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900/50 py-20 sm:py-0 sm:p-6">
-                    <div className="min-h-24">
-                      <h3 className="text-xl font-title font-semibold -tracking-wide text-zinc-950 dark:text-white">
-                        {plan.name}
-                      </h3>
-                      <p className="mt-2 text-xs font-medium leading-5 text-zinc-600 dark:text-zinc-400">
-                        {plan.description}
-                      </p>
-                    </div>
-
-                    <div className="mt-6">
-                      <div className="flex items-start gap-1.5">
-                        <strong className="block text-4xl font-semibold -tracking-wider font-title text-zinc-950 dark:text-white">
-                          {plan.price}{' '}
-                        </strong>
-                        <p className="mt-2 text-xs tracking-normal font-medium leading-4">
-                          {plan.period !== '' && ` / ${plan.period}`}
+                    <div className="relative hover:border-zinc-200 rounded-2xl hover:dark:border-zinc-700 overflow-hidden border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900/50 py-20 sm:py-6 sm:p-6">
+                      <div className="min-h-24">
+                        <h3 className="text-xl font-title font-semibold -tracking-wide text-zinc-950 dark:text-white">
+                          {plan.name}
+                        </h3>
+                        <p className="mt-2 text-xs font-medium leading-5 text-zinc-600 dark:text-zinc-400">
+                          {plan.description}
                         </p>
                       </div>
-                      <p className="mt-2 text-xs font-medium leading-4 text-zinc-500">
-                        <br />
-                        {plan.note}
-                      </p>
-                    </div>
 
-                    <Link
-                      href="/appointment"
-                      className={`mt-6 inline-flex h-11 w-full items-center justify-center border px-5 text-xs font-semibold transition-colors ${
-                        plan.highlighted
-                          ? 'border-orange-500 bg-orange-500 text-white hover:bg-orange-600'
-                          : 'border-zinc-200 bg-white text-zinc-950 hover:border-orange-300 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:hover:border-orange-500'
-                      }`}
-                    >
-                      Começar agora
-                    </Link>
+                      <div className="mt-6">
+                        <div className="flex items-start gap-1.5">
+                          <strong className="block text-4xl font-semibold -tracking-wider font-title text-zinc-950 dark:text-white">
+                            {plan.price}{' '}
+                          </strong>
+                          <p className="mt-2 text-xs tracking-normal font-medium leading-4">
+                            {plan.period !== '' && ` / ${plan.period}`}
+                          </p>
+                        </div>
+                        <p className="mt-2 text-xs font-medium leading-4 text-zinc-500">
+                          <br />
+                          {plan.note}
+                        </p>
+                      </div>
 
-                    {/* <div className="my-7 flex items-center gap-3 text-orange-200 dark:text-zinc-800">
+                      <Link
+                        href="/appointment"
+                        className={`mt-6 rounded-xl inline-flex h-11 w-full items-center justify-center border px-5 text-xs font-semibold transition-colors ${
+                          plan.highlighted
+                            ? 'border-orange-500 bg-orange-500 text-white hover:bg-orange-600'
+                            : 'border-zinc-200 bg-white text-zinc-950 hover:border-orange-300 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:hover:border-orange-500'
+                        }`}
+                      >
+                        Começar agora
+                      </Link>
+
+                      {/* <div className="my-7 flex items-center gap-3 text-orange-200 dark:text-zinc-800">
                         <span className="h-px flex-1 bg-current" />
                         <span className="h-2 w-2 rounded-full bg-current" />
                         <span className="h-px flex-1 bg-current" />
                       </div> */}
 
-                    <p className="text-xs font-semibold text-zinc-500 mt-5">
-                      O que está incluído:
-                    </p>
+                      <p className="text-xs font-semibold text-zinc-500 mt-5">
+                        O que está incluído:
+                      </p>
 
-                    <ul className="mt-4 space-y-3 text-xs font-semibold text-zinc-700 dark:text-zinc-300">
-                      {plan.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-3">
-                          <Check
-                            size={14}
-                            strokeWidth={2.5}
-                            className="shrink-0 text-orange-500"
-                          />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                      <ul className="mt-4 space-y-3 text-xs font-semibold text-zinc-700 dark:text-zinc-300">
+                        {plan.features.map((feature) => (
+                          <li key={feature} className="flex items-center gap-3">
+                            <Check
+                              size={14}
+                              strokeWidth={2.5}
+                              className="shrink-0 text-orange-500"
+                            />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {plan.highlighted && (
+                      <div className="flex items-center justify-center w-full h-10 gap-2">
+                        <Crown
+                          size={12}
+                          fill="currentColor"
+                          className="text-orange-500"
+                        />
+                        <p className="text-[9px] font-semibold tracking-[4px] mt-[3px]">
+                          MELHOR PLANO
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </article>
               ))}
@@ -489,7 +509,7 @@ export default function Home() {
         </div>
       </footer>
 
-      <div className="mx-auto flex max-w-5xl items-center justify-center overflow-hidden px-4 my-10 sm:mt-0">
+      <div className="mx-auto flex max-w-5xl items-center justify-center overflow-hidden px-4 my-10">
         <strong className="absolute text-[42px] font-black leading-none text-center text-zinc-200 dark:text-zinc-400 -tracking-widest sm:text-[78px] lg:text-[120px] lg:leading-[30px]">
           dodoapp.com.br
         </strong>
