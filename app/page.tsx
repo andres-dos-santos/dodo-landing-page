@@ -1,4 +1,5 @@
 import {
+  ArrowDownLeft,
   ArrowRight,
   CalendarCheck,
   Check,
@@ -188,19 +189,29 @@ export default function Home() {
               <div className="mb-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                 <button
                   type="button"
-                  className="h-12 w-full rounded-full dark:bg-white bg-zinc-900 px-10 sm:w-auto"
+                  className="h-12 w-full rounded-full dark:bg-white bg-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-100 px-10 sm:w-auto"
                 >
                   <p className="text-xs text-white dark:text-zinc-900 font-medium -tracking-wide">
                     Comece, é grátis
                   </p>
                 </button>
+
                 <button
                   type="button"
-                  className="h-12 w-full rounded-full border border-zinc-500 px-10 sm:w-auto"
+                  className="group relative h-12 min-w-[160px] rounded-full border border-zinc-500 px-10 sm:w-auto"
                 >
-                  <p className="text-xs font-medium -tracking-wide">
+                  <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:opacity-0 text-xs font-medium -tracking-wide">
                     Download app
                   </p>
+                  <div className="flex items-center absolute left-1/2 top-1/2 gap-2 -translate-x-1/2 -translate-y-1/2 ">
+                    <ArrowDownLeft
+                      size={14}
+                      className="transition-all group-hover:duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 -translate-y-3 group-hover:translate-x-0 translate-x-3"
+                    />
+                    <p className="text-xs font-medium -tracking-wide group-hover:delay-300 transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-3">
+                      Clique...
+                    </p>
+                  </div>
                 </button>
               </div>
 
