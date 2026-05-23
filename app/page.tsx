@@ -311,9 +311,9 @@ export default function Home() {
               {pricingPlans.map((plan) => (
                 <article key={plan.name} className="group relative">
                   <div
-                    className={`${plan.highlighted && 'bg-zinc-100 dark:bg-zinc-800'} p-1 rounded-[18px]`}
+                    className={`${plan.highlighted && 'bg-zinc-100 dark:bg-zinc-900'} p-1 rounded-[18px]`}
                   >
-                    <div className="relative hover:border-zinc-200 rounded-2xl hover:dark:border-zinc-700 overflow-hidden border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900/50 py-20 sm:py-6 sm:p-6">
+                    <div className="relative hover:border-zinc-300 rounded-2xl hover:dark:border-zinc-700 overflow-hidden border border-zinc-200 bg-white p-5 dark:border-zinc-800 py-10 sm:py-6 sm:p-6 dark:bg-zinc-950">
                       <div className="min-h-24">
                         <h3 className="text-xl font-title font-semibold -tracking-wide text-zinc-950 dark:text-white">
                           {plan.name}
