@@ -265,8 +265,25 @@ export default function Home() {
               )
             })}
 
-            <article className="flex items-center justify-center border-b border-dashed relative border-zinc-200 dark:border-zinc-800 px-5 py-10 sm:px-7 sm:pt-16 md:border-l md:px-16 lg:px-32">
-              <div className="h-56 w-full max-w-[400px] border border-zinc-200 dark:border-zinc-800/50 dark:bg-[linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:54px_54px] p-6 dark:shadow-2xl dark:shadow-black/40 sm:h-[400px]"></div>
+            <article className="flex items-center justify-center border-b border-dashed relative border-zinc-200 dark:border-zinc-800 px-5 py-10 sm:px-7 sm:pt-16 md:border-l md:px-16 lg:px-32 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:content-[''] before:opacity-[0.05] before:z-10 before:pointer-events-none before:bg-[url('https://www.ui-layouts.com/noise.gif')]">
+              <div className="absolute top-20 left-32 h-[200px] w-[400px] blur-3xl bg-gradient-to-r from-cyan-600/50 to-cyan-900/20 rounded-3xl" />
+              <div className="absolute top-0 right-0 h-[200px] w-[200px] rounded-full bg-purple-400/20 blur-3xl dark:bg-purple-200/30" />
+              <div className="absolute bottom-0 left-0 h-[600px] w-[400px] rounded-full bg-orange-800/25 blur-3xl dark:bg-orange-700/20" />
+              <div className="absolute bottom-10 right-0 h-[500px] w-[200px] -rotate-45 blur-3xl bg-gradient-to-b from-pink-400/50 to-pink-900/20 rounded-3xl" />
+              <div className="absolute bottom-0 right-32 h-[100px] w-[100px] -rotate-45 blur-3xl bg-gradient-to-b from-zinc-400/50 to-zinc-600/20" />
+              {/* <div className="absolute bottom-0 left-0 h-[600px] w-[400px] rounded-full bg-orange-800/25 blur-3xl dark:bg-orange-700/20" /> */}
+
+              <div className="">
+                <div className="flex h-[280px] w-[280px] items-center justify-center">
+                  <Image
+                    alt=""
+                    src="/logo-big.png"
+                    className="relative z-10 h-[280px] w-[280px]"
+                    width={500}
+                    height={500}
+                  />
+                </div>
+              </div>
             </article>
           </div>
         </section>
