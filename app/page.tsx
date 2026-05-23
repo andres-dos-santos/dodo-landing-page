@@ -171,11 +171,6 @@ export default function Home() {
 
       <main className="pt-20">
         <section className="relative mx-auto w-full border-x border-zinc-200 dark:border-zinc-800 border-dashed min-h-[calc(100vh-5rem)] px-5 py-10 text-center sm:w-[92%] sm:px-6 sm:py-12 lg:w-[80%] lg:pt-10 lg:pb-20">
-          {/* <div className="absolute top-[-4px] -left-[4px] z-10 bg-white dark:bg-zinc-950 rounded-full h-2 w-2 border-2 border-zinc-200 dark:border-zinc-700"></div>
-          <div className="absolute top-[-4px] -right-[4px] z-10 bg-white dark:bg-zinc-950 rounded-full h-2 w-2 border-2 border-zinc-200 dark:border-zinc-700"></div>
-          <div className="absolute bottom-[-4px] -left-[4px] z-10 bg-white dark:bg-zinc-950 rounded-full h-2 w-2 border-2 border-zinc-200 dark:border-zinc-700"></div>
-          <div className="absolute bottom-[-4px] -right-[4px] z-10 bg-white dark:bg-zinc-950 rounded-full h-2 w-2 border-2 border-zinc-200 dark:border-zinc-700"></div> */}
-
           <div className="hidden sm:flex absolute top-[-40px] right-[-140px] h-[240px] w-[240px] rounded-full bg-gradient-to-r blur-[90px] dark:from-purple-200/40 dark:via-orange-200/30 dark:to-blue-200/40 dark:from-purple-500/40 dark:via-orange-500/30 dark:to-blue-500/40 sm:right-[-50px] sm:h-[300px] sm:w-[300px] sm:blur-[120px]" />
           <div className="hidden sm:flex absolute top-[-80px] left-[-240px] h-[420px] w-[420px] blur-[90px] bg-gradient-to-br from-[#FAF8FF] to-[#FCFBFF] dark:from-[#120A19] dark:to-[#150624] sm:top-[-100px] sm:left-[-200px] sm:h-[600px] sm:w-[600px] sm:blur-[100px]" />
 
@@ -226,12 +221,12 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="grid grid-cols-5 gap-3 grid-rows-2 h-96">
-              <div className="row-span-2 col-span-3 p-1 bg-zinc-200 dark:bg-zinc-800 sm:rounded-l-4xl rounded-xl h-full"></div>
+            <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 grid-rows-2 h-96">
+              <div className="row-span-2 col-span-3 p-1 bg-zinc-200 dark:bg-zinc-800 sm:rounded-l-4xl rounded-4xl sm:rounded-xl h-full"></div>
 
-              <div className="h-[186px] col-span-2 p-1 bg-zinc-200 dark:bg-zinc-800 rounded-tr-4xl rounded-xl"></div>
+              <div className="hidden sm:flex h-[186px] col-span-2 p-1 bg-zinc-200 dark:bg-zinc-800 rounded-tr-4xl rounded-xl"></div>
 
-              <div className="h-[186px] col-span-2 p-1 bg-zinc-200 dark:bg-zinc-800 rounded-br-4xl rounded-xl"></div>
+              <div className="hidden sm:flex h-[186px] col-span-2 p-1 bg-zinc-200 dark:bg-zinc-800 rounded-br-4xl rounded-xl"></div>
             </div>
           </div>
         </section>
