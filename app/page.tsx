@@ -170,7 +170,7 @@ export default function Home() {
       </header>
 
       <main className="pt-20">
-        <section className="relative mx-auto w-full border-x border-zinc-200 dark:border-zinc-800 border-dashed min-h-[calc(100vh-5rem)] px-5 py-10 text-center sm:w-[92%] sm:px-6 sm:py-12 lg:w-[80%] lg:pt-10 lg:pb-20">
+        <section className="relative mx-auto w-full border-zinc-200 dark:border-zinc-800 border-dashed min-h-[calc(100vh-5rem)] px-5 py-10 text-center sm:w-[92%] sm:border-x sm:px-6 sm:py-12 lg:w-[80%] lg:pt-10 lg:pb-20">
           <div className="hidden sm:flex absolute top-[-40px] right-[-140px] h-[240px] w-[240px] rounded-full bg-gradient-to-r blur-[90px] dark:from-purple-200/40 dark:via-orange-200/30 dark:to-blue-200/40 dark:from-purple-500/40 dark:via-orange-500/30 dark:to-blue-500/40 sm:right-[-50px] sm:h-[300px] sm:w-[300px] sm:blur-[120px]" />
           <div className="hidden sm:flex absolute top-[-80px] left-[-240px] h-[420px] w-[420px] blur-[90px] bg-gradient-to-br from-[#FAF8FF] to-[#FCFBFF] dark:from-[#120A19] dark:to-[#150624] sm:top-[-100px] sm:left-[-200px] sm:h-[600px] sm:w-[600px] sm:blur-[100px]" />
 
@@ -233,7 +233,7 @@ export default function Home() {
 
         <section
           id="solucoes"
-          className="mx-auto w-full border-x border-t border-zinc-200 dark:border-zinc-800 border-dashed relative overflow-hidden sm:w-[92%] lg:w-[80%]"
+          className="mx-auto w-full border-t border-zinc-200 dark:border-zinc-800 border-dashed relative overflow-hidden sm:w-[92%] sm:border-x lg:w-[80%]"
         >
           <div className="grid md:grid-cols-2">
             {solutions.map((solution) => {
@@ -265,7 +265,7 @@ export default function Home() {
               )
             })}
 
-            <article className="flex items-center justify-center border-b border-dashed relative border-zinc-200 dark:border-zinc-800 px-5 py-10 sm:px-7 sm:pt-16 md:border-l md:px-16 lg:px-32 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:content-[''] before:opacity-[0.05] before:z-10 before:pointer-events-none before:bg-[url('https://www.ui-layouts.com/noise.gif')]">
+            <article className="min-h-96 sm:min-h-auto flex items-center justify-center border-b border-dashed relative overflow-hidden border-zinc-200 dark:border-zinc-800 px-5 py-10 sm:px-7 pt-16 md:border-l md:px-16 lg:px-32 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:content-[''] before:opacity-[0.05] before:z-10 before:pointer-events-none before:bg-[url('https://www.ui-layouts.com/noise.gif')]">
               <div className="absolute top-20 left-32 h-[200px] w-[400px] blur-3xl bg-gradient-to-r from-cyan-600/50 to-cyan-900/20 rounded-3xl" />
               <div className="absolute top-0 right-0 h-[200px] w-[200px] rounded-full bg-purple-400/20 blur-3xl dark:bg-purple-200/30" />
               <div className="absolute bottom-0 left-0 h-[600px] w-[400px] rounded-full bg-orange-800/25 blur-3xl dark:bg-orange-700/20" />
@@ -274,11 +274,11 @@ export default function Home() {
               {/* <div className="absolute bottom-0 left-0 h-[600px] w-[400px] rounded-full bg-orange-800/25 blur-3xl dark:bg-orange-700/20" /> */}
 
               <div className="">
-                <div className="flex h-[280px] w-[280px] items-center justify-center">
+                <div className="flex h-[80px] w-[80px] sm:h-[180px] sm:w-[180px] items-center justify-center">
                   <Image
                     alt=""
                     src="/logo-big.png"
-                    className="relative z-10 h-[280px] w-[280px]"
+                    className="relative z-10 h-[80px] w-[80px] sm:h-[180px] sm:w-[180px]"
                     width={500}
                     height={500}
                   />
@@ -290,7 +290,7 @@ export default function Home() {
 
         <section
           id="precos"
-          className="relative border-zinc-200 mx-auto w-full border border-t-0 dark:border-zinc-800 border-dashed px-5 py-16 sm:w-[92%] sm:px-6 sm:py-24 lg:w-[80%]"
+          className="relative border-zinc-200 mx-auto w-full border-b border-t-0 dark:border-zinc-800 border-dashed px-5 py-16 sm:w-[92%] sm:border-x sm:px-6 sm:py-24 lg:w-[80%]"
         >
           <div className="mx-auto max-w-5xl">
             <div className="mb-10 mx-auto max-w-2xl flex flex-col items-center justify-center text-center">
@@ -394,7 +394,7 @@ export default function Home() {
 
         <section
           id="faq"
-          className="relative border-zinc-200 mx-auto w-full border-x dark:border-zinc-800 border-dashed sm:w-[92%] lg:w-[80%]"
+          className="relative border-zinc-200 mx-auto w-full dark:border-zinc-800 border-dashed sm:w-[92%] sm:border-x lg:w-[80%]"
         >
           <div className="mx-auto max-w-3xl px-5 py-16 sm:px-6 sm:py-24">
             <div className="mb-10 text-center">
@@ -436,7 +436,7 @@ export default function Home() {
 
         <section
           id="suporte"
-          className="relative border-zinc-200 mx-auto w-full border-x dark:border-zinc-800 border-dashed pb-16 sm:w-[92%] sm:pb-24 lg:w-[80%]"
+          className="relative border-zinc-200 mx-auto w-full dark:border-zinc-800 border-dashed pb-16 sm:w-[92%] sm:border-x sm:pb-24 lg:w-[80%]"
         >
           <div className="mx-auto max-w-6xl">
             <div className="rounded-[28px] bg-zinc-100 p-6 dark:bg-zinc-900/30 sm:rounded-4xl sm:p-10 md:flex md:items-center md:justify-between md:gap-10 lg:p-32">
