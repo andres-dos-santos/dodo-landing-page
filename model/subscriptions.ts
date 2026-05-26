@@ -24,6 +24,40 @@ type ApiResponse<T> = {
   }
 }
 
+type SubscriptionCookies = {
+  accessToken?: string
+  refreshToken?: string
+}
+
+type HeadersWithSetCookie = Headers & {
+  getSetCookie?: () => string[]
+}
+
+function splitSetCookieHeader(header: string) {
+  return header.split(/,(?=\s*[^;,=]+=[^;,]*)/)
+}
+
+function getSubscriptionCookies(headers: Headers) {
+  const setCookieHeaders =
+    (headers as HeadersWithSetCookie).getSetCookie?.() ??
+    splitSetCookieHeader(headers.get('set-cookie') ?? '')
+
+  return setCookieHeaders.reduce<SubscriptionCookies>((cookies, cookie) => {
+    const [nameValue] = cookie.trim().split(';')
+    const [name, value] = nameValue.split('=')
+
+    if (name === 'accessToken') {
+      cookies.accessToken = value
+    }
+
+    if (name === 'refreshToken') {
+      cookies.refreshToken = value
+    }
+
+    return cookies
+  }, {})
+}
+
 export class SubscriptionModel {
   async consumeTemporarySubscriptionToken(token: string) {
     const response = await fetch(
@@ -46,6 +80,9 @@ export class SubscriptionModel {
       )
     }
 
-    return body.data?.content
+    return {
+      content: body.data?.content,
+      cookies: getSubscriptionCookies(response.headers),
+    }
   }
 }

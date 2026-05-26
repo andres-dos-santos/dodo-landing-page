@@ -19,8 +19,10 @@ export default async function SubscriptionPage({
   return (
     <div>
       <h1>
-        Aqui conecta com o Stripe por exemplo {subscription?.plan_id ?? token}
+        Aqui conecta com o Stripe por exemplo{' '}
+        {subscription?.content?.plan_id ?? token}
       </h1>
+      <pre>{JSON.stringify(subscription?.cookies ?? {}, null, 2)}</pre>
     </div>
   )
 }
